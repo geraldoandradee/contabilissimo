@@ -2,5 +2,6 @@
 /logs/*
 !/logs/README.md
 composer-setup.php
-composer.*
+composer.lock
+composer.phar
 .idea

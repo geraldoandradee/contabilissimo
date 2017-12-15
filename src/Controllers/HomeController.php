@@ -3,7 +3,11 @@
 namespace Contabilissimo\Controllers;
 
 
-class HomeController 
-{
+use Contabilissimo\Library\Controller\BaseController;
 
+class HomeController extends BaseController
+{
+  public function index() {
+
+  }
 }

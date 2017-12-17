@@ -1,21 +1,13 @@
 <?php
+
+use Contabilissimo\Library\Routers\Route;
+
 return [
     'settings' => [
-//      'router' => new
-//        'displayErrorDetails' => true, // set to false in production
-//        'addContentLengthHeader' => false, // Allow the web server to send the content-length header
-//
-//        // Renderer settings
-//        'renderer' => [
-//            'template_path' => __DIR__ . '/Views/',
-//        ],
-//
-//        // Monolog settings
-//        'logger' => [
-//            'name' => 'slim-app',
-//            'path' => isset($_ENV['docker']) ? 'php://stdout' : __DIR__ . '/../logs/app.log',
-//            'level' => \Monolog\Logger::DEBUG,
-//        ],
+      // router settings
+      'router' => \Contabilissimo\Library\Routers\Router::getInstance(), // default router
+      'routes' => [
+        new Route('GET', '/', 'home', 'Contabilissimo\Module\Site\Controllers\HomeController::index'),
+      ]
     ],
-
 ];

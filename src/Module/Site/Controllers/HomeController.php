@@ -1,13 +1,14 @@
 <?php 
 
-namespace Contabilissimo\Controllers;
-
+namespace Contabilissimo\Module\Site\Controllers;
 
 use Contabilissimo\Library\Controller\BaseController;
 
 class HomeController extends BaseController
 {
   public function index() {
-    echo 'Home';
+//    var_dump($request, $response);
+    echo "FUNDOU";
+//    $response->render();
   }
 }

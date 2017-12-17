@@ -5,8 +5,7 @@ namespace Contabilissimo\Library;
 
 class App extends BaseApp
 {
-  private static $app;
-  private static $params = array();
+  private static $app = null;
 
   private function __construct()
   {
@@ -41,8 +40,15 @@ class App extends BaseApp
 
   public function run()
   {
-    echo "OK";
-  }
+    $this->setupRoutes();
+    $match = $this->router->match();
 
+    if( $match && is_callable( $match['target'] ) ) {
+      call_user_func_array( $match['target'], $match['params'] );
+    } else {
+      // no route was matched
+      header( $_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
+    }
+  }
 
 }

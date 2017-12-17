@@ -79,32 +79,6 @@ abstract class AbstractResponse
    */
   public $chunked = false;
 
-
-  /**
-   * Methods
-   */
-
-  /**
-   * Constructor
-   *
-   * Create a new AbstractResponse object with a dependency injected Headers instance
-   *
-   * @param string $body          The response body's content
-   * @param int $status_code      The status code
-   * @param array $headers        The response header "hash"
-   */
-  public function __construct($body = '', $status_code = null, array $headers = array())
-  {
-    $status_code   = $status_code ?: static::$default_status_code;
-
-    // Set our body and code using our internal methods
-    $this->body($body);
-    $this->code($status_code);
-
-    $this->headers = new HeaderDataCollection($headers);
-    $this->cookies = new ResponseCookieDataCollection();
-  }
-
   /**
    * Get (or set) the HTTP protocol version
    *
@@ -160,6 +134,18 @@ abstract class AbstractResponse
   public function status()
   {
     return $this->status;
+  }
+
+  /**
+   * Returns the status object
+   *
+   * @param int $status
+   * @return AbstractResponse
+   */
+  public function setStatus(int $status)
+  {
+    $this->status = $status;
+    return $this;
   }
 
   /**

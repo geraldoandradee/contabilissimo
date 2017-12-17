@@ -8,7 +8,7 @@ class HomeController extends BaseController
 {
   public function index() {
 //    var_dump($request, $response);
-    echo "FUNDOU";
+    echo "OK";
 //    $response->render();
   }
 }

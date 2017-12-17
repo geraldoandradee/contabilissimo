@@ -2,18 +2,55 @@
 
 namespace Contabilissimo\Library;
 
+use Contabilissimo\Library\Http\Request;
+use Contabilissimo\Library\Http\Response;
 use Contabilissimo\Library\Routers\Router;
 
 abstract class BaseApp
 {
-  protected $response;
-  protected $request;
+  /**
+   * @var Response
+   **/
+  private $response;
+  private $request;
   /**
     * @var Router
     **/
   protected $router;
   protected $routes;
   protected $params = array();
+
+  /**
+   * @return Response
+   */
+  public function getResponse()
+  {
+    return $this->response;
+  }
+
+  /**
+   * @param Response $response
+   */
+  public function setResponse(Response $response)
+  {
+    $this->response = $response;
+  }
+
+  /**
+   * @return Request|null
+   */
+  public function getRequest()
+  {
+    return $this->request;
+  }
+
+  /**
+   * @param Request $request
+   */
+  public function setRequest(Request $request)
+  {
+    $this->request = $request;
+  }
 
   protected function setConfigItem($key, $value)
   {

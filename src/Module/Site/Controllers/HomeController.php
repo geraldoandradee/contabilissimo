@@ -7,8 +7,6 @@ use Contabilissimo\Library\Controller\BaseController;
 class HomeController extends BaseController
 {
   public function index() {
-//    var_dump($request, $response);
-    echo "OK";
-//    $response->render();
+    $this->render('home/index.php', array('teste' => 'OKOKOK'));
   }
 }

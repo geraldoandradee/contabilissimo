@@ -1,31 +1,23 @@
 <?php
+
 namespace Contabilissimo\Library\Controller;
 
+
+use Contabilissimo\Library\App;
+use Contabilissimo\Library\Http\Response;
+use Contabilissimo\Library\Template\Render;
 
 abstract class BaseController
 {
   protected $params;
-  protected $response;
-  protected $request;
-
-  public function render() {
-
-  }
+  protected $templateEngine;
 
   /**
    * @return mixed
    */
   public function getRequest()
   {
-    return $this->request;
-  }
-
-  /**
-   * @param mixed $request
-   */
-  public function setRequest($request)
-  {
-    $this->request = $request;
+    return App::getInstance()->getRequest();
   }
 
   /**
@@ -33,15 +25,11 @@ abstract class BaseController
    */
   public function getResponse()
   {
-    return $this->response;
+    return App::getInstance()->getResponse();
   }
 
-  /**
-   * @param mixed $response
-   */
-  public function setResponse($response)
+  public function render($templateName, $opts)
   {
-    $this->response = $response;
+    Response::getInstance()->body(Render::getInstance()->render($templateName, $opts))->sendBody();
   }
-
 }

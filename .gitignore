@@ -6,3 +6,5 @@ composer.lock
 composer.phar
 .idea
 tests/_output/*
+cache/
+!cache/.gitkeep

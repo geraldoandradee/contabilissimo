@@ -1,4 +1,4 @@
-{% extends 'layout/base.php' %}
+{% extends base.php' %}
 
 {% block content %}
 <h1>HOME</h1>

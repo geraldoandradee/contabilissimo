@@ -1,19 +1,17 @@
 {
-  "name": "slim/slim-skeleton",
-  "description": "A Slim Framework skeleton application for rapid development",
+  "name": "geraldoandradee/contabilissimo",
+  "description": "",
   "keywords": [
-    "microframework",
-    "rest",
-    "router",
-    "psr7"
+    "accountant",
+    "personal",
   ],
-  "homepage": "http://github.com/slimphp/Slim-Skeleton",
+  "homepage": "https://github.com/geraldoandradee/contabilissimo",
   "license": "MIT",
   "authors": [
     {
-      "name": "Josh Lockhart",
-      "email": "info@joshlockhart.com",
-      "homepage": "http://www.joshlockhart.com/"
+      "name": "Geraldo Andrade",
+      "email": "geraldo@geraldoandrade.com",
+      "homepage": "http://geraldoandrade.com/"
     }
   ],
   "require": {
